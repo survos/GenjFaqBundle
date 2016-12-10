@@ -3,6 +3,7 @@
 namespace Genj\FaqBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 /**
  * Class FaqController
@@ -20,6 +21,8 @@ class FaqController extends Controller
      *
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      * @return \Symfony\Component\HttpFoundation\Response
+     * 
+     * @Cache(expires="+1 hour", smaxage="1 hour", public=true)
      */
     public function indexAction($categorySlug, $questionSlug)
     {
